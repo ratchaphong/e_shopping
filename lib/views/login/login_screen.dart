@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/login_controller.dart';
-import '../gen/assets.gen.dart';
-import '../utilities/theme.dart';
+import '../../controllers/login_controller.dart';
+import '../../gen/assets.gen.dart';
+import '../../utilities/theme.dart';
 import 'buttom_text_widget.dart';
 import 'login.dart';
 import 'registration.dart';
@@ -30,13 +30,8 @@ class LoginScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: MediaQuery.of(context).size.width / 3),
-                  // Image.asset(
-                  //   logo,
-                  //   width: 200,
-                  // ),
+                  SizedBox(height: MediaQuery.of(context).size.height / 4),
                   Assets.images.logo.image(
                     width: MediaQuery.of(context).size.width * 0.7,
                   ),

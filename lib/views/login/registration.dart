@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../controllers/login_controller.dart';
-import '../utilities/theme.dart';
-import '../widgets/custom_button.dart';
+import '../../controllers/login_controller.dart';
+import '../../utilities/theme.dart';
+import '../../widgets/custom_button.dart';
 
 class RegistrationWidget extends StatelessWidget {
   final LoginController loginController = LoginController.instance;

@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../views/home/home_screen.dart';
+
 class LoginController extends GetxController {
   static LoginController instance = Get.find();
 
@@ -43,7 +45,7 @@ class LoginController extends GetxController {
       //   clearControllers();
       // });
       clearControllers();
-      // Get.offAll(() => HomeScreen());
+      Get.offAll(() => const HomeScreen());
     } catch (e) {
       debugPrint(e.toString());
       Get.snackbar("Sign In Failed", "Try again");
