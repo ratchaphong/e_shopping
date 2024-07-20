@@ -25,8 +25,8 @@ class ColorResources {
   static const Color grey2 = Color.fromARGB(255, 133, 133, 133);
   static const Color grey3 = Color.fromARGB(135, 238, 236, 236);
   static const Color grey4 = Color.fromARGB(255, 241, 241, 241);
-
   static const Color red1 = Colors.red;
+  static const Color transparent = Colors.transparent;
 }
 
 class FontSizes {

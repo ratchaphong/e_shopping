@@ -1,13 +1,15 @@
 import 'package:e_shopping/utilities/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../../controllers/cart_controller.dart';
 import '../../models/product_model.dart';
 import '../../widgets/custom_text.dart';
 
 class SingleProductWidget extends StatelessWidget {
+  final CartController cartController = CartController.instance;
   final ProductModel product;
 
-  const SingleProductWidget({super.key, required this.product});
+  SingleProductWidget({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class SingleProductWidget extends StatelessWidget {
                 IconButton(
                     icon: const Icon(Icons.add_shopping_cart),
                     onPressed: () {
-                      // cartController.addProductToCart(product);
+                      cartController.addProductToCart(product);
                     })
               ],
             ),

@@ -1,5 +1,7 @@
 import 'package:e_shopping/utilities/theme.dart';
+import 'package:e_shopping/views/home/shopping_cart.dart';
 import 'package:flutter/material.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../widgets/custom_text.dart';
 import 'product_widget.dart';
@@ -22,13 +24,13 @@ class HomeScreen extends StatelessWidget {
           IconButton(
               icon: const Icon(Icons.shopping_cart),
               onPressed: () {
-                // showBarModalBottomSheet(
-                //   context: context,
-                //   builder: (context) => Container(
-                //     color: Colors.white,
-                //     child: ShoppingCartWidget(),
-                //   ),
-                // );
+                showBarModalBottomSheet(
+                  context: context,
+                  builder: (context) => Container(
+                    color: ColorResources.white1,
+                    child: ShoppingCartWidget(),
+                  ),
+                );
               })
         ],
         elevation: 0,
