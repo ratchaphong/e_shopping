@@ -7,6 +7,7 @@ import '../models/user_model.dart';
 
 class UserController extends GetxController {
   static UserController instance = Get.find();
+
   RxBool isLoading = false.obs;
   Rx<UserModel> userModel = UserModel(
     id: '',

@@ -1,8 +1,8 @@
 import 'package:e_shopping/utilities/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/cart_model.dart';
-import '../../widgets/custom_text.dart';
+import '../../../models/cart_model.dart';
+import '../../../widgets/custom_text.dart';
 
 class CartItemWidget extends StatefulWidget {
   final CartItemModel cartItem;

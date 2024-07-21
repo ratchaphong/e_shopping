@@ -1,15 +1,14 @@
 import 'package:e_shopping/utilities/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../../controllers/cart_controller.dart';
-import '../../models/product_model.dart';
-import '../../widgets/custom_text.dart';
+import '../../../models/product_model.dart';
+import '../../../utilities/controllers.dart';
+import '../../../widgets/custom_text.dart';
 
 class SingleProductWidget extends StatelessWidget {
-  final CartController cartController = CartController.instance;
   final ProductModel product;
 
-  SingleProductWidget({super.key, required this.product});
+  const SingleProductWidget({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {

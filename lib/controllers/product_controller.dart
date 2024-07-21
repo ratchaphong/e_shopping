@@ -13,14 +13,9 @@ class ProductController extends GetxController {
   @override
   onInit() {
     super.onInit();
-    print("Get all products.");
-    // products.bindStream(getAllProducts());
+
     getAllProducts();
   }
-
-  // Stream<List<ProductModel>> getAllProducts() =>
-  //     firebaseFirestore.collection(collection).snapshots().map((query) =>
-  //         query.docs.map((item) => ProductModel.fromMap(item.data())).toList());
 
   void getAllProducts() async {
     isLoading(true);

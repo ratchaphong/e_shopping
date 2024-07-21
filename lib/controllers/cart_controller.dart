@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:e_shopping/controllers/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
@@ -8,10 +7,11 @@ import 'package:uuid/uuid.dart';
 import '../models/cart_model.dart';
 import '../models/product_model.dart';
 import '../models/user_model.dart';
+import '../utilities/controllers.dart';
 
 class CartController extends GetxController {
   static CartController instance = Get.find();
-  final UserController userController = UserController.instance;
+
   RxDouble totalCartPrice = 0.0.obs;
   RxBool isLoading = false.obs;
 

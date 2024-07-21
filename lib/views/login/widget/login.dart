@@ -1,13 +1,11 @@
 import 'package:e_shopping/utilities/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../../controllers/login_controller.dart';
-import '../../widgets/custom_button.dart';
+import '../../../utilities/controllers.dart';
+import '../../../widgets/custom_button.dart';
 
 class LoginWidget extends StatelessWidget {
-  final LoginController loginController = LoginController.instance;
-
-  LoginWidget({super.key});
+  const LoginWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

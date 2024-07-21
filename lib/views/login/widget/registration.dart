@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../controllers/login_controller.dart';
-import '../../utilities/theme.dart';
-import '../../widgets/custom_button.dart';
+import '../../../utilities/controllers.dart';
+import '../../../utilities/theme.dart';
+import '../../../widgets/custom_button.dart';
 
 class RegistrationWidget extends StatelessWidget {
-  final LoginController loginController = LoginController.instance;
-
-  RegistrationWidget({super.key});
+  const RegistrationWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

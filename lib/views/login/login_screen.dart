@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controllers/login_controller.dart';
 import '../../gen/assets.gen.dart';
+import '../../utilities/controllers.dart';
 import '../../utilities/theme.dart';
-import 'buttom_text_widget.dart';
-import 'login.dart';
-import 'registration.dart';
+import 'widget/buttom_text_widget.dart';
+import 'widget/login.dart';
+import 'widget/registration.dart';
 
 class LoginScreen extends StatelessWidget {
-  final LoginController loginController = LoginController.instance;
-
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

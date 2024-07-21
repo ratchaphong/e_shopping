@@ -4,6 +4,7 @@ import 'package:e_shopping/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'controllers/payment_controller.dart';
 import 'controllers/user_controller.dart';
 import 'routes.dart';
 
@@ -13,6 +14,7 @@ void main() {
   Get.put(LoginController());
   Get.put(ProductController());
   Get.put(CartController());
+  Get.put(PaymentController());
 
   runApp(const MyApp());
 }
