@@ -1,5 +1,7 @@
 import 'package:e_shopping/utilities/theme.dart';
+import 'package:e_shopping/views/detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../models/product_model.dart';
 import '../../../utilities/controllers.dart';
@@ -18,9 +20,10 @@ class SingleProductWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.withOpacity(.5),
-                offset: const Offset(3, 2),
-                blurRadius: 8)
+              color: Colors.grey.withOpacity(.5),
+              offset: const Offset(3, 2),
+              blurRadius: 8,
+            )
           ]),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -50,10 +53,15 @@ class SingleProductWidget extends StatelessWidget {
               text: product.brand,
               color: Colors.grey,
             ),
-            CustomText(
-              text: product.name,
-              size: FontSizes.sizeLg,
-              weight: FontWeight.bold,
+            GestureDetector(
+              onTap: () => Get.to(() => DetailScreen(
+                    product: product,
+                  )),
+              child: CustomText(
+                text: product.name,
+                size: FontSizes.sizeLg,
+                weight: FontWeight.bold,
+              ),
             ),
             const Spacer(),
             Row(
