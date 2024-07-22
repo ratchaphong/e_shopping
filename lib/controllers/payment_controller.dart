@@ -47,20 +47,28 @@ class PaymentController extends GetxController {
             'Nike Air Jordan 1 Mid Aj1 Aqua Men Casual Lifestyle Shoes Sneakers',
         image:
             'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTZqROrWIztTazMbyBkbRJpEjdWafUw5NdiGWSggNZacyFG8PkMzZIc8g4VYyRZSbvcKyzvL5MGQ_QvxnWHoVOiboAk_3lY3jh9OuGIOaGmNmCp9A4EOuKvUw&usqp=CAE',
-        quantity: 3,
-        cost: 76.99 * 3,
+        quantity: 1,
+        cost: 76.99 * 1,
         productId: '2',
         price: 76.99,
       ),
     ];
     double totalAmount = cart.fold(0, (sum, item) => sum + item.cost);
 
-    payments.add(PaymentsModel(
-      id: id,
-      amount: totalAmount,
-      status: 'APPROVED',
-      cart: cart,
-    ));
+    payments.addAll([
+      PaymentsModel(
+        id: id,
+        amount: totalAmount,
+        status: 'APPROVED',
+        cart: cart,
+      ),
+      PaymentsModel(
+        id: id,
+        amount: totalAmount,
+        status: 'CANCELLED',
+        cart: cart,
+      )
+    ]);
     Get.to(() => const PaymentsScreen());
   }
 }

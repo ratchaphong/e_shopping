@@ -40,4 +40,13 @@ class UserController extends GetxController {
       user?.cart = updatedCart;
     });
   }
+
+  void setUserData(UserModel data) {
+    userModel.update((user) {
+      user?.id = data.id;
+      user?.name = data.name;
+      user?.email = data.email;
+      user?.cart = data.cart;
+    });
+  }
 }

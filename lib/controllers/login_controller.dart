@@ -1,8 +1,12 @@
 // ignore_for_file: avoid_print
 
+import 'package:e_shopping/utilities/controllers.dart';
+import 'package:e_shopping/views/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uuid/uuid.dart';
 
+import '../models/user_model.dart';
 import '../views/home/home_screen.dart';
 
 class LoginController extends GetxController {
@@ -38,12 +42,14 @@ class LoginController extends GetxController {
   void signIn() async {
     try {
       // showLoading();
-      // await auth
-      //     .signInWithEmailAndPassword(
-      //         email: email.text.trim(), password: password.text.trim())
-      //     .then((result) {
-      //   clearControllers();
-      // });
+      String userId = const Uuid().toString();
+      UserModel data = UserModel(
+        id: userId,
+        name: 'Mark Suckerberg',
+        email: 'suckerberg@gmail.com',
+        cart: [],
+      );
+      userController.setUserData(data);
       clearControllers();
       Get.offAll(() => const HomeScreen());
     } catch (e) {
@@ -69,5 +75,16 @@ class LoginController extends GetxController {
       debugPrint(e.toString());
       Get.snackbar("Sign In Failed", "Try again");
     }
+  }
+
+  void signOut() async {
+    UserModel data = UserModel(
+      id: "",
+      name: '',
+      email: '',
+      cart: [],
+    );
+    userController.setUserData(data);
+    Get.offAll(() => const LoginScreen());
   }
 }

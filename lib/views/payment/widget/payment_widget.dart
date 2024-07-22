@@ -1,6 +1,6 @@
 import 'package:e_shopping/utilities/theme.dart';
 import 'package:flutter/material.dart';
-
+import 'package:timeago/timeago.dart' as timeago;
 import '../../../models/payments_model.dart';
 import '../../../widgets/custom_text.dart';
 
@@ -57,32 +57,59 @@ class PaymentWidget extends StatelessWidget {
           const Divider(),
           Column(
               children: paymentsModel.cart
-                  .map((item) => ListTile(
-                        title: CustomText(
-                          text: item.name,
-                        ),
-                        trailing: CustomText(
-                          text: "\$ ${item.cost}",
+                  .map((item) => Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: CustomText(
+                                text: item.name,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 8.0,
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                alignment: Alignment.topRight,
+                                child: CustomText(
+                                  text: "\$ ${item.cost}",
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ))
                   .toList()),
           const Divider(),
-          // CustomText(
-          //   text: _returnDate(),
-          //   color: Colors.grey,
-          // ),
-          CustomText(
-            text: paymentsModel.status,
-            color: Colors.green,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomText(
+                  text: returnDate(),
+                  color: Colors.grey,
+                ),
+                CustomText(
+                  text: paymentsModel.status,
+                  color: paymentsModel.status == 'APPROVED'
+                      ? ColorResources.darkGreen1
+                      : ColorResources.red1,
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  // String _returnDate() {
-  //   DateTime date =
-  //       new DateTime.fromMillisecondsSinceEpoch(paymentsModel.createdAt);
-  //   return timeago.format(date, locale: 'fr');
-  // }
+  String returnDate() {
+    DateTime date = DateTime.now();
+    return timeago.format(date, locale: 'fr');
+  }
 }

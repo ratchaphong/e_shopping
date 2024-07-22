@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
       ),
-      backgroundColor: ColorResources.white1,
+      backgroundColor: ColorResources.white2,
       drawer: Drawer(
         child: ListView(
           children: [
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
-                // userController.signOut();
+                loginController.signOut();
               },
               leading: const Icon(Icons.exit_to_app),
               title: const Text("Log out"),
@@ -70,10 +70,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-        color: ColorResources.white2,
-        child: ProductsWidget(),
-      ),
+      body: ProductsWidget(),
     );
   }
 }
